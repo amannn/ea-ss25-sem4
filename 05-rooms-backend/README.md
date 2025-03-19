@@ -38,19 +38,6 @@ GET /users/me
 
 ### Writes
 
-#### Toggling the starred status of a room
-
-```tsx
-fetch('http://localhost:3001/rooms/{id}/toggle-starred', {
-  method: 'POST'
-});
-```
-
-**Responses:**
-
-- `200`: The request has succeeded
-- `404`: The provided `id` is not known
-
 #### Adding a room
 
 ```tsx
@@ -79,3 +66,16 @@ The following validations are in place:
 1. All shown properties are mandatory
 2. `heroUrl` must be a URL that starts with `https://c.pxhere.com/`
 3. `pricePerNight.currency` currently only supports `USD`
+
+#### Toggling the starred status of a room
+
+```tsx
+fetch('http://localhost:3001/rooms/{id}/toggle-starred', {
+  method: 'POST'
+});
+```
+
+**Responses:**
+
+- `200`: The request has succeeded
+- `404`: The provided `id` is not known
