@@ -21,3 +21,9 @@ export async function addMessage(content: string) {
   });
   await fs.writeFile(filePath, JSON.stringify(messages));
 }
+
+export async function removeMessage(id: number) {
+  const messages = await getMessages();
+  const updated = messages.filter((message) => message.id !== id);
+  await fs.writeFile(filePath, JSON.stringify(updated));
+}
