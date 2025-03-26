@@ -10,3 +10,5 @@ jobs:
         working-directory: 07-testing
       - run: npm run test
         working-directory: 07-testing
+      - run: npm run build
+        working-directory: 07-testing
