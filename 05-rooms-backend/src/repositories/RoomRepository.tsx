@@ -22,7 +22,7 @@ export default class RoomRepository {
   public static createRoom(input: RoomInput): Room {
     const room = {
       ...input,
-      id: db.rooms.length + 1,
+      id: db.rooms.length,
       owner: db.me,
       createdAt: new Date().toISOString()
     };

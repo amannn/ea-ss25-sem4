@@ -4,12 +4,15 @@ import {notFound} from 'next/navigation';
 import {NextRequest, NextResponse} from 'next/server';
 import {z} from 'zod';
 
-export function POST(request: NextRequest, props: {params: {id: string}}) {
+export async function POST(
+  request: NextRequest,
+  props: {params: Promise<{id: string}>}
+) {
   const id = z.coerce
     .number()
     .optional()
     .catch(undefined)
-    .parse(props.params.id);
+    .parse((await props.params).id);
   if (id == null) notFound();
 
   let room = RoomRepository.getRoom(id);
