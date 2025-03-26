@@ -8,3 +8,5 @@ jobs:
       - uses: actions/setup-node@v4
       - run: npm install
         working-directory: 07-testing
+      - run: npm run test
+        working-directory: 07-testing
